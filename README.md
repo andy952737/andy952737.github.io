@@ -4,5 +4,3 @@
 - card
 - css_table
 - iframe overflow hidden
-# andyDesign.github.io
-# andy952737.github.io
