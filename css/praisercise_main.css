@@ -71,24 +71,25 @@ body {
 	.praisercise-main {
 		padding: 0px;
 		width: 300px;
+		margin: 10px auto;
 		/*border: 0.5px solid;*/
 	}
 
 	.praisercise-box {
-		padding: 5px;
-		margin: 20px 10px;
+		padding: 0px;
+		margin: 5px 0px;
 		/*float: left;*/
 		text-align: center;
 		border: 2px solid #CB98DB;
-		width: 250px;
-		height: 200px;
+		width: 230px;
+		height: 230px;
 	}
 
 	.praisercise-footer {
 		background-color: #FFC300;
 		position: relative;
 		bottom: 0;
-	    top: 560px;
+	    top: 700px;
 	    height: 100px;
 	    border-top: 15px solid #DAF7A6;
     	border-right: 35px solid #FF5733;
