@@ -70,16 +70,17 @@ body {
 
 	.praisercise-main {
 		padding: 0px;
+		width: 300px;
 		/*border: 0.5px solid;*/
 	}
 
 	.praisercise-box {
 		padding: 5px;
-		margin: 20px 30px;
+		margin: 20px 10px;
 		/*float: left;*/
 		text-align: center;
 		border: 2px solid #CB98DB;
-		width: 350px;
+		width: 250px;
 		height: 200px;
 	}
 
