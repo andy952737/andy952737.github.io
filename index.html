@@ -1,52 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
+<head> 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>前端設計模組</title> 
+    <title>前端</title> 
     <!-- <link rel="stylesheet" href="css/reset.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="bootstrap-5.0.2/css/bootstrap.css">
-    
     <script src="js/index.js"></script> 
     <script src="js/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-<h2>前端設計模組</h2>
-<hr> 
+<div style="height: 60px; border-bottom: 1px solid;">
+  <h2 style="padding-left: 25px; padding-top: 5px;" class="api-title"></h2>
+</div>
+<!-- <hr>  
 <ol>
   <li><a href="shop.html" title="">魚皮購物</a></li>
   <li><a href="slide.html" title="">幻燈片效果</a></li>
 </ol>
-<hr>
+<hr> -->
 <script>  
   //var p = window.navigator.userAgent;
   // var pp = navigator.userAgent.match("Safari");　
   // alert(pp);
 
-  // $(document).ready(function(){
+  $(document).ready(function(){
     
-  //   $.ajax({
-  //     type: 'GET',
-  //     url: 'http://localhost:3000/test/index',
-  //     data: {name: '享tech', location: 'API'},
-  //     success: function(msg) {
-  //       if(msg.result == 1){
-  //         alert('Data Saved: ' + msg.data);
-  //       }
-  //     }
-  //   });
+    $.ajax({
+      type: 'GET',
+      url: 'http://localhost:3000/test/index',
+      data: {name: '享tech', location: 'API'},
+      success: function(msg) {
+        if(msg.result == 1){
+          //alert('Data Saved: ' + msg.data);
+          $(".api-title").html(msg.data);
+        }
+      },
+      error: function(msg) {
+        $(".api-title").html("api沒有回來");
+      }
+    });
 
-  // }); 
+  }); 
 </script>
 
-<input type="hidden" class="js-demeter-tw-zipcode-selector" data-city="#city" data-dist="#dist" placeholder="請輸入郵遞區號" />
+<!-- <input type="hidden" class="js-demeter-tw-zipcode-selector" data-city="#city" data-dist="#dist" placeholder="請輸入郵遞區號" />
 <select id="city" placeholder="請選擇縣市"></select>
 <select id="dist" placeholder="請選擇鄉鎮區"></select>
-
-
-<script src="https://demeter.5fpro.com/tw/zipcode-selector.js"></script>
+<script src="https://demeter.5fpro.com/tw/zipcode-selector.js"></script> -->
 </body>
 </html>
