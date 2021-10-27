@@ -16,12 +16,12 @@
 <div style="height: 60px; border-bottom: 1px solid;">
   <h2 style="padding-left: 25px; padding-top: 5px;" class="api-title"></h2>
 </div>
-<!-- <hr>  
-<ol>
-  <li><a href="shop.html" title="">魚皮購物</a></li>
-  <li><a href="slide.html" title="">幻燈片效果</a></li>
-</ol>
-<hr> -->
+<h3 style="padding: 10px;">api文章列表demo</h3>
+<div>
+  <p class="post-content"></p>
+  <p class="post-time"></p>
+</div>
+
 <script>  
   //var p = window.navigator.userAgent;
   // var pp = navigator.userAgent.match("Safari");　
@@ -31,16 +31,34 @@
     
     $.ajax({
       type: 'GET',
+      dataType: 'json',
       url: 'http://localhost:3000/test/index',
       data: {name: '享tech', location: 'API'},
       success: function(msg) {
         if(msg.result == 1){
-          //alert('Data Saved: ' + msg.data);
+          //alert('Data Saved: ' + msg.data); 
           $(".api-title").html(msg.data);
         }
       },
       error: function(msg) {
         $(".api-title").html("api沒有回來");
+      }
+    });
+
+    $.ajax({
+      type: 'GET',
+      dataType: 'json', 
+      url: 'http://localhost:3000/test/blog_test',
+      data: {name: '享tech_部落格Demo', location: 'API'},
+      success: function(msg) {
+        if(msg.result == 1){ 
+          $(".post-content").html(msg.timeslices[0].values.content);
+          $(".post-time").html(msg.timeslices[0].values.time);
+          console.log(msg.timeslices);
+        }
+      },
+      error: function(msg) {
+        $(".post-content").html("api沒有回來");
       }
     });
 
