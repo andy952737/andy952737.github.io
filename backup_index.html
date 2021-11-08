@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>前端</title> 
+    <!-- <link rel="stylesheet" href="css/reset.css"> -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="bootstrap-5.0.2/css/bootstrap.css">
+    <script src="js/index.js"></script> 
+    <script src="js/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script> 
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+          
+<style>
+
+  /* 上底線文字  */
+  .h2_test {
+    border-top: 1px solid #B50104;
+    padding-left: 20px;
+    top: -10px;
+    position: relative;
+    display: block;
+    height: 10px;
+  }
+  
+</style>
+
+<br>
+<h2 class="h2_test">Test border</h2>
+
+<div style="height: 60px; border-bottom: 1px solid;">
+  <h2 style="padding-left: 25px; padding-top: 5px;" class="api-title"></h2>
+</div>
+<h3 style="padding: 10px;">api文章列表demo</h3>
+<div>
+  <p class="post-content"></p>
+  <p class="post-time"></p>
+</div>
+
+<script>  
+  //var p = window.navigator.userAgent;
+  // var pp = navigator.userAgent.match("Safari");　
+  // alert(pp);
+
+  $(document).ready(function(){
+    
+    $.ajax({
+      type: 'GET',
+      dataType: 'json',
+      url: 'http://localhost:3000/test/index',
+      data: {name: '享tech', location: 'API'},
+      success: function(msg) {
+        if(msg.result == 1){
+          //alert('Data Saved: ' + msg.data); 
+          $(".api-title").html(msg.data);
+        }
+      },
+      error: function(msg) {
+        $(".api-title").html("api沒有回來");
+      }
+    });
+
+    $.ajax({
+      type: 'GET',
+      dataType: 'json', 
+      url: 'http://localhost:3000/test/blog_test',
+      data: {name: '享tech_部落格Demo', location: 'API'},
+      success: function(msg) {
+        if(msg.result == 1){ 
+          $(".post-content").html(msg.timeslices[0].values.content);
+          $(".post-time").html(msg.timeslices[0].values.time);
+          console.log(msg.timeslices);
+        }
+      },
+      error: function(msg) {
+        $(".post-content").html("api沒有回來");
+      }
+    });
+
+  }); 
+</script>
+
+<!-- <input type="hidden" class="js-demeter-tw-zipcode-selector" data-city="#city" data-dist="#dist" placeholder="請輸入郵遞區號" />
+<select id="city" placeholder="請選擇縣市"></select>
+<select id="dist" placeholder="請選擇鄉鎮區"></select>
+<script src="https://demeter.5fpro.com/tw/zipcode-selector.js"></script> -->
+</body>
+</html>

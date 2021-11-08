@@ -5,11 +5,11 @@ body {
 .praisercise-header { 
 	min-height: 100%;
 	background-color: #DFB64E;
-	height: 90px;
+	height: 30px; 
 	/*text-align: center;*/
-	border-bottom: 15px solid #DAF7A6;
+	/*border-bottom: 15px solid #DAF7A6;
 	border-left: 35px solid #FF5733;
-	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+	box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
 } 
 
 .logo-text {
@@ -57,9 +57,9 @@ body {
 		background-color: #DFB64E;
 		height: 90px;
 		/*text-align: center;*/
-		border-bottom: 15px solid #DAF7A6;
+		/*border-bottom: 15px solid #DAF7A6;
 		border-left: 35px solid #FF5733;
-		box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+		box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);*/
 	} 
 
 	.logo-text {
