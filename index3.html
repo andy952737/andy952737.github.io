@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>HTML</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<style type="text/css" media="screen">
+		.wrap{
+		width: 100%;
+		height: 100%;
+		position: fixed;
+		left: 0;
+		top: 0;
+		margin: auto;
+		text-align:center;
+		font-size: 0;
+		}
+		.wrap:before{
+		content:'';
+		display: inline-block;
+		width: 0px;
+		height: 100%;
+		vertical-align: middle;
+		}
+		.wrap:after{
+		content:'';
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: 0;
+		background-color: #000;
+		opacity:.5
+		}
+		.content{
+		width: 400px;
+		padding: 10px;
+		background-color: #ccc;
+		text-align: center;
+		position: relative;
+		z-index: 1;
+		font-size: 16px;
+		display: inline-block;
+		vertical-align: middle;
+		}
+	</style>
+	<div class="wrap">
+	<div class="content">
+	<h2>Amos的垂直置中好也</h2>
+	<p>
+	  垂直置中須於中;<br>
+	  直豎在中皆可置;<br>
+	  置位於中正且直;<br>
+	  中於正中不再垂.
+	</p>
+	</div>
+	</div>
+</body>
+</html>
